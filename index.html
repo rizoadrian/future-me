@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Me — See your financial future</title>
+  <meta name="description" content="Upload your bank statements. See exactly where your money goes and where it's taking you — free, private, no account required.">
+  <meta property="og:title" content="Future Me — Money Mirror Dashboard">
+  <meta property="og:description" content="Free financial clarity tool. No data stored. Upload CSVs, see your future.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/future-me/assets/index-D8Jvbm6z.js"></script>
+  <link rel="stylesheet" crossorigin href="/future-me/assets/index-Dj-ZPutY.css">
+</head>
+<body>
+
+  <!-- SCREEN 1: Welcome / Privacy gate -->
+  <div id="screen-welcome" class="screen active">
+    <nav class="nav">
+      <div class="nav-logo">future <strong>me</strong></div>
+      <div class="nav-tag">Money Mirror Dashboard</div>
+    </nav>
+    <div class="welcome-body">
+      <div class="eyebrow-rule">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Your money, finally clear</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1>See where your money <em>actually</em> goes</h1>
+      <p class="welcome-sub">Upload your bank and credit card statements. Get a complete picture of your spending history, current cashflows, and where you'll be 6 months from now.</p>
+
+      <div class="privacy-card">
+        <div class="privacy-header">
+          <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M9 12l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="privacy-title">Your data stays with you</div>
+            <div class="privacy-subtitle">No accounts. No storage. No tracking.</div>
+          </div>
+        </div>
+        <ul class="privacy-list">
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Your CSV files are processed locally in your browser and never sent to any server
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No data is stored, logged, or retained after you close this tab
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No account creation required — your financial information stays anonymous
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Take a screenshot of any scenario you want to keep for your records
+          </li>
+        </ul>
+      </div>
+
+      <div class="consent-row">
+        <label class="consent-label">
+          <input type="checkbox" id="consent-checkbox" />
+          <span class="consent-check"></span>
+          <span>I understand my data is not stored and I'm ready to continue</span>
+        </label>
+      </div>
+      <button id="btn-get-started" class="btn-primary" disabled>
+        Get started
+        <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: Upload -->
+  <div id="screen-upload" class="screen">
+    <nav class="nav">
+      <div class="nav-logo">future <strong>me</strong></div>
+      <div class="nav-tag">Step 2 of 3</div>
+    </nav>
+    <div class="upload-body">
+      <div class="step-bar">
+        <div class="step done">
+          <div class="step-dot">
+            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Privacy</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step active">
+          <div class="step-dot"><span>2</span></div>
+          <span>Upload</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-dot"><span>3</span></div>
+          <span>Dashboard</span>
+        </div>
+      </div>
+
+      <h2>Upload your statements</h2>
+      <p class="upload-sub">The more accounts you add, the more complete your picture. Up to 24 months per account.</p>
+
+      <div class="upload-sections">
+        <!-- Section A: Checking & Savings -->
+        <div class="upload-section upload-section-checking" id="drop-zone-cashflow">
+          <div class="upload-section-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="8" width="28" height="18" rx="3" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"/>
+              <path d="M2 14h28" stroke="var(--accent)" stroke-width="1.5"/>
+              <rect x="6" y="18" width="6" height="2" rx="1" fill="var(--accent)"/>
+              <rect x="14" y="18" width="4" height="2" rx="1" fill="var(--accent-mid)" opacity="0.5"/>
+              <path d="M22 6V4a2 2 0 00-2-2H12a2 2 0 00-2 2v2" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="upload-section-title">Checking &amp; savings accounts</div>
+          <div class="upload-section-subtitle">Powers your cashflow charts and 6-month projection</div>
+          <label class="drop-zone" id="drop-zone-cashflow-inner">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 15V3m0 12l-3-3m3 3l3-3" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2" stroke="var(--ink-3)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Drop files here or click to browse</span>
+            <input type="file" accept=".csv" multiple id="upload-cashflow" />
+          </label>
+          <p class="upload-tip">Have more than one checking account? Add them all.</p>
+        </div>
+
+        <!-- Section B: Credit Cards -->
+        <div class="upload-section upload-section-credit" id="drop-zone-spending">
+          <div class="upload-section-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="9" width="28" height="18" rx="3" fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="1.5"/>
+              <path d="M2 15h28" stroke="var(--ink-3)" stroke-width="1.5"/>
+              <rect x="6" y="19" width="6" height="3" rx="1" fill="var(--ink-4)"/>
+              <rect x="6" y="5" width="6" height="4" rx="1" fill="var(--paper-3)" stroke="var(--ink-4)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="upload-section-title">Credit cards &amp; other spending</div>
+          <div class="upload-section-subtitle">Powers your spending categories and monthly breakdown</div>
+          <label class="drop-zone" id="drop-zone-spending-inner">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 15V3m0 12l-3-3m3 3l3-3" stroke="var(--ink-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2" stroke="var(--ink-3)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Drop files here or click to browse</span>
+            <input type="file" accept=".csv" multiple id="upload-spending" />
+          </label>
+          <p class="upload-tip">Add all your cards for the most accurate spending picture.</p>
+        </div>
+      </div>
+
+      <!-- Bank export guide -->
+      <details class="export-guide">
+        <summary>How do I export from my bank?</summary>
+        <div class="export-guide-body">
+          <div class="export-col">
+            <div class="export-col-title">Checking &amp; savings</div>
+            <ul>
+              <li><strong>Chase:</strong> Account → Download → CSV</li>
+              <li><strong>Bank of America:</strong> Accounts → Download → CSV</li>
+              <li><strong>Wells Fargo:</strong> Accounts → Download Activity → Comma Delimited File</li>
+              <li><strong>Charles Schwab:</strong> Accounts → History → Export</li>
+              <li><strong>Ally:</strong> Transactions → Export → CSV</li>
+              <li><strong>US Bank:</strong> My Accounts → Download → CSV</li>
+            </ul>
+          </div>
+          <div class="export-col">
+            <div class="export-col-title">Credit cards</div>
+            <ul>
+              <li><strong>Chase:</strong> Account → Download → CSV</li>
+              <li><strong>Citi:</strong> Account Activity → Download → CSV</li>
+              <li><strong>Capital One:</strong> View Transactions → Download CSV</li>
+              <li><strong>American Express:</strong> Statements → Download CSV</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- File list -->
+      <div id="file-list" class="file-list"></div>
+
+      <!-- Data quality summary -->
+      <div id="data-quality" class="data-quality" style="display:none"></div>
+
+      <!-- No checking warning -->
+      <div id="no-checking-warning" class="warn-banner" style="display:none">
+        <svg viewBox="0 0 20 20" fill="none"><path d="M10 2L1 17h18L10 2z" fill="var(--warn-light)" stroke="var(--warn)" stroke-width="1.25"/><path d="M10 8v4" stroke="var(--warn)" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="14.5" r="0.75" fill="var(--warn)"/></svg>
+        <div>
+          <strong>Your cashflow charts need a checking account</strong> — your spending charts are ready. Add a checking account CSV to unlock your full dashboard.
+          <label class="drop-zone drop-zone-mini" id="drop-zone-warn">
+            <input type="file" accept=".csv" multiple id="upload-warn" />
+            + Add checking account
+          </label>
+        </div>
+      </div>
+
+      <button id="btn-analyze" class="btn-primary" style="display:none">
+        Analyze my finances
+        <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Dashboard -->
+  <div id="screen-dashboard" class="screen">
+    <nav class="nav nav-dashboard">
+      <div class="nav-logo">future <strong>me</strong></div>
+      <div class="nav-info-bar">
+        <div id="nav-meta" class="nav-meta"></div>
+        <button id="btn-screenshot-tip" class="btn-ghost">
+          <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          Save screenshot tip
+        </button>
+      </div>
+    </nav>
+
+    <div class="dashboard-body">
+
+      <!-- Panel 1: Stat cards -->
+      <div class="panel panel-stats" id="panel-stats">
+        <div class="stat-card" id="stat-income">
+          <div class="stat-label">Monthly income</div>
+          <div class="stat-value">—</div>
+          <div class="stat-sub">avg over data range</div>
+        </div>
+        <div class="stat-card" id="stat-expenses">
+          <div class="stat-label">Monthly expenses</div>
+          <div class="stat-value">—</div>
+          <div class="stat-sub">avg over data range</div>
+        </div>
+        <div class="stat-card" id="stat-net">
+          <div class="stat-label">Monthly net</div>
+          <div class="stat-value">—</div>
+          <div class="stat-sub">income minus expenses</div>
+        </div>
+        <div class="stat-card" id="stat-negative">
+          <div class="stat-label">Balance goes negative</div>
+          <div class="stat-value">—</div>
+          <div class="stat-sub">based on current projection</div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Historical spending + cashflow -->
+      <div class="panel panel-two-col" id="panel-history">
+        <div class="panel-col" id="panel-spending-history">
+          <div class="panel-header">
+            <div class="panel-title">Spending by category</div>
+            <div class="panel-subtitle">Historical monthly breakdown</div>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chart-spending-history"></canvas>
+          </div>
+        </div>
+        <div class="panel-col" id="panel-cashflow-history">
+          <div class="panel-header">
+            <div class="panel-title">Daily cashflow</div>
+            <div class="panel-subtitle">Checking account running balance</div>
+          </div>
+          <div class="chart-wrap" id="cashflow-chart-wrap">
+            <canvas id="chart-cashflow-history"></canvas>
+          </div>
+          <div id="cashflow-placeholder" class="placeholder-card" style="display:none">
+            <div class="placeholder-title">Cashflow chart unavailable</div>
+            <p class="placeholder-body">Upload a checking account CSV to see your daily balance history here. Your spending breakdown above is still complete.</p>
+            <label class="drop-zone drop-zone-mini" id="drop-zone-cashflow-placeholder">
+              <input type="file" accept=".csv" multiple id="upload-cashflow-placeholder" />
+              Add checking account →
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Donut + Category editor -->
+      <div class="panel panel-two-col" id="panel-current">
+        <div class="panel-col" id="panel-donut">
+          <div class="panel-header">
+            <div class="panel-title">This month's spending</div>
+            <div class="panel-subtitle" id="current-month-label"></div>
+          </div>
+          <div class="chart-wrap chart-wrap-donut">
+            <canvas id="chart-donut"></canvas>
+          </div>
+          <div id="donut-legend" class="donut-legend"></div>
+        </div>
+        <div class="panel-col" id="panel-category-editor">
+          <div class="panel-header">
+            <div class="panel-title">Monthly averages</div>
+            <div class="panel-subtitle">Edit to update your projection</div>
+          </div>
+          <div id="category-editor" class="category-editor"></div>
+          <button id="btn-reset-categories" class="btn-ghost btn-sm">Reset all</button>
+        </div>
+      </div>
+
+      <!-- Panel 4: Other drilldown -->
+      <div class="panel" id="panel-other" style="display:none">
+        <div class="panel-header">
+          <div class="panel-title">
+            Transactions we couldn't categorize
+            <span id="other-badge" class="badge"></span>
+          </div>
+          <div class="panel-subtitle">Help us categorize these for a more accurate picture</div>
+        </div>
+        <div class="other-actions" id="other-actions" style="display:none">
+          <button id="btn-apply-suggestions" class="btn-secondary btn-sm">Apply all suggestions</button>
+        </div>
+        <div class="other-table-wrap">
+          <table class="other-table" id="other-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Suggested Category</th>
+                <th>Assign</th>
+              </tr>
+            </thead>
+            <tbody id="other-table-body"></tbody>
+          </table>
+        </div>
+        <div id="other-load-more" style="display:none; text-align:center; padding: 12px;">
+          <button id="btn-load-more" class="btn-ghost btn-sm">Load more</button>
+        </div>
+        <div id="other-all-done" class="all-done" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"/><path d="M7 12l3.5 3.5L17 8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All transactions categorized. Nice work.
+        </div>
+      </div>
+
+      <!-- Panel 5: Projection -->
+      <div class="panel" id="panel-projection">
+        <div class="panel-header">
+          <div class="panel-title">6-month cashflow projection</div>
+          <div class="panel-subtitle">Based on your income and spending patterns</div>
+        </div>
+        <div id="projection-content">
+          <div id="projection-warning" class="danger-banner" style="display:none"></div>
+          <div class="projection-balance-row">
+            <label class="balance-input-label">
+              Starting balance
+              <input type="text" id="starting-balance-input" placeholder="e.g. 4,200" class="balance-input" />
+              <span id="balance-input-help" class="balance-input-help"></span>
+            </label>
+          </div>
+          <div class="chart-wrap chart-wrap-projection">
+            <canvas id="chart-projection"></canvas>
+          </div>
+        </div>
+        <div id="projection-placeholder" class="placeholder-card" style="display:none">
+          <div class="placeholder-title">6-month projection unavailable</div>
+          <p class="placeholder-body">Your cashflow projection needs a checking account to work — it tells us your income, your balance, and when your money moves. Without it, we can't project your future with any accuracy.</p>
+          <p class="placeholder-body">Your spending breakdown above is complete and accurate.</p>
+          <label class="drop-zone drop-zone-mini" id="drop-zone-projection-placeholder">
+            <input type="file" accept=".csv" multiple id="upload-projection-placeholder" />
+            Add checking account →
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Screenshot tip modal -->
+  <div id="screenshot-modal" class="modal-overlay" style="display:none">
+    <div class="modal">
+      <div class="modal-title">Save your dashboard</div>
+      <p>Press <kbd>Cmd+Shift+4</kbd> (Mac) or <kbd>Win+Shift+S</kbd> (Windows) to take a screenshot of any panel.</p>
+      <p>Your data is not saved when you close this tab — screenshot any scenario you want to keep.</p>
+      <button id="btn-close-modal" class="btn-primary btn-sm">Got it</button>
+    </div>
+  </div>
+
+</body>
+</html>
