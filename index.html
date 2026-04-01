@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/future-me/assets/index-2BG62k11.js"></script>
-  <link rel="stylesheet" crossorigin href="/future-me/assets/index-C5DT8TXc.css">
+  <script type="module" crossorigin src="/future-me/assets/index-gNdZUf8q.js"></script>
+  <link rel="stylesheet" crossorigin href="/future-me/assets/index-C1TKUQzZ.css">
 </head>
 <body>
 
@@ -215,8 +215,8 @@
 
     <div class="dashboard-body">
 
-      <!-- Panel 1: Stat cards -->
-      <div class="panel panel-stats" id="panel-stats">
+      <!-- Section 1: Stat cards -->
+      <div class="panel panel-stats" id="section-today">
         <div class="stat-card" id="stat-income">
           <div class="stat-label">Monthly income</div>
           <div class="stat-value">—</div>
@@ -239,38 +239,38 @@
         </div>
       </div>
 
-      <!-- Panel 2: Historical spending + cashflow -->
-      <div class="panel panel-two-col" id="panel-history">
-        <div class="panel-col" id="panel-spending-history">
-          <div class="panel-header">
-            <div class="panel-title">Spending by category</div>
-            <div class="panel-subtitle">Historical monthly breakdown</div>
-          </div>
-          <div class="chart-wrap">
-            <canvas id="chart-spending-history"></canvas>
-          </div>
+      <!-- Section 2: Historical cashflow line chart -->
+      <div class="panel" id="section-history">
+        <div class="panel-header">
+          <div class="panel-title">Historical daily cashflow — checking account balance</div>
+          <div class="panel-subtitle" style="color: var(--ink-4)">End-of-day balance from your checking account — hover any point for the exact date</div>
         </div>
-        <div class="panel-col" id="panel-cashflow-history">
-          <div class="panel-header">
-            <div class="panel-title">Historical daily cashflow — checking account balance</div>
-            <div class="panel-subtitle" style="color: var(--ink-4)">End-of-day balance from your checking account — hover any point for the exact date</div>
-          </div>
-          <div class="chart-wrap" id="cashflow-chart-wrap">
-            <canvas id="chart-cashflow-history"></canvas>
-          </div>
-          <div id="cashflow-placeholder" class="placeholder-card" style="display:none">
-            <div class="placeholder-title">Cashflow chart unavailable</div>
-            <p class="placeholder-body">Upload a checking account CSV to see your daily balance history here. Your spending breakdown above is still complete.</p>
-            <label class="drop-zone drop-zone-mini" id="drop-zone-cashflow-placeholder">
-              <input type="file" accept=".csv" multiple id="upload-cashflow-placeholder" />
-              Add checking account →
-            </label>
-          </div>
+        <div class="chart-wrap" id="cashflow-chart-wrap">
+          <canvas id="chart-cashflow-history"></canvas>
+        </div>
+        <div id="cashflow-placeholder" class="placeholder-card" style="display:none">
+          <div class="placeholder-title">Cashflow chart unavailable</div>
+          <p class="placeholder-body">Upload a checking account CSV to see your daily balance history here. Your spending breakdown above is still complete.</p>
+          <label class="drop-zone drop-zone-mini" id="drop-zone-cashflow-placeholder">
+            <input type="file" accept=".csv" multiple id="upload-cashflow-placeholder" />
+            Add checking account →
+          </label>
         </div>
       </div>
 
-      <!-- Panel 3: Donut + Category editor -->
-      <div class="panel panel-two-col" id="panel-current">
+      <!-- Section 3: Historical spending bar chart -->
+      <div class="panel" id="section-spending">
+        <div class="panel-header">
+          <div class="panel-title">Spending by category</div>
+          <div class="panel-subtitle">Historical monthly breakdown</div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart-spending-history"></canvas>
+        </div>
+      </div>
+
+      <!-- Section 4: Donut + Category editor -->
+      <div class="panel panel-two-col" id="section-edit">
         <div class="panel-col" id="panel-donut">
           <div class="panel-header">
             <div class="panel-title">This month's spending</div>
@@ -291,8 +291,38 @@
         </div>
       </div>
 
-      <!-- Panel 4: Other drilldown -->
-      <div class="panel" id="panel-other" style="display:none">
+      <!-- Section 5: Projection (hero panel) -->
+      <div class="panel panel-accent-top" id="section-future">
+        <div class="panel-header">
+          <div class="panel-title">6-month cashflow projection</div>
+          <div class="panel-subtitle">Based on your income and spending patterns</div>
+        </div>
+        <div id="projection-content">
+          <div id="projection-warning" class="danger-banner" style="display:none"></div>
+          <div class="projection-balance-row">
+            <label class="balance-input-label">
+              Your latest checking balance
+              <input type="text" id="starting-balance-input" placeholder="e.g. 4,200" class="balance-input" />
+              <span id="balance-input-help" class="balance-input-help"></span>
+            </label>
+          </div>
+          <div class="chart-wrap chart-wrap-projection">
+            <canvas id="chart-projection"></canvas>
+          </div>
+        </div>
+        <div id="projection-placeholder" class="placeholder-card" style="display:none">
+          <div class="placeholder-title">6-month projection unavailable</div>
+          <p class="placeholder-body">Your cashflow projection needs a checking account to work — it tells us your income, your balance, and when your money moves. Without it, we can't project your future with any accuracy.</p>
+          <p class="placeholder-body">Your spending breakdown above is complete and accurate.</p>
+          <label class="drop-zone drop-zone-mini" id="drop-zone-projection-placeholder">
+            <input type="file" accept=".csv" multiple id="upload-projection-placeholder" />
+            Add checking account →
+          </label>
+        </div>
+      </div>
+
+      <!-- Section 6: Uncategorized transactions drilldown -->
+      <div class="panel" id="section-review" style="display:none">
         <div class="panel-header">
           <div class="panel-title">
             Transactions we couldn't categorize
@@ -326,36 +356,6 @@
         </div>
       </div>
 
-      <!-- Panel 5: Projection -->
-      <div class="panel" id="panel-projection">
-        <div class="panel-header">
-          <div class="panel-title">6-month cashflow projection</div>
-          <div class="panel-subtitle">Based on your income and spending patterns</div>
-        </div>
-        <div id="projection-content">
-          <div id="projection-warning" class="danger-banner" style="display:none"></div>
-          <div class="projection-balance-row">
-            <label class="balance-input-label">
-              Your latest checking balance
-              <input type="text" id="starting-balance-input" placeholder="e.g. 4,200" class="balance-input" />
-              <span id="balance-input-help" class="balance-input-help"></span>
-            </label>
-          </div>
-          <div class="chart-wrap chart-wrap-projection">
-            <canvas id="chart-projection"></canvas>
-          </div>
-        </div>
-        <div id="projection-placeholder" class="placeholder-card" style="display:none">
-          <div class="placeholder-title">6-month projection unavailable</div>
-          <p class="placeholder-body">Your cashflow projection needs a checking account to work — it tells us your income, your balance, and when your money moves. Without it, we can't project your future with any accuracy.</p>
-          <p class="placeholder-body">Your spending breakdown above is complete and accurate.</p>
-          <label class="drop-zone drop-zone-mini" id="drop-zone-projection-placeholder">
-            <input type="file" accept=".csv" multiple id="upload-projection-placeholder" />
-            Add checking account →
-          </label>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -366,6 +366,34 @@
       <p>Press <kbd>Cmd+Shift+4</kbd> (Mac) or <kbd>Win+Shift+S</kbd> (Windows) to take a screenshot of any panel.</p>
       <p>Your data is not saved when you close this tab — screenshot any scenario you want to keep.</p>
       <button id="btn-close-modal" class="btn-primary btn-sm">Got it</button>
+    </div>
+  </div>
+
+  <!-- Floating section navigation (shown only after dashboard loads) -->
+  <div id="floating-nav" style="display:none" aria-label="Section navigation">
+    <div class="fnav-item" data-section="section-today">
+      <span class="fnav-label">Today</span>
+      <div class="nav-dot" data-section="section-today"></div>
+    </div>
+    <div class="fnav-item" data-section="section-history">
+      <span class="fnav-label">History</span>
+      <div class="nav-dot" data-section="section-history"></div>
+    </div>
+    <div class="fnav-item" data-section="section-spending">
+      <span class="fnav-label">Spending</span>
+      <div class="nav-dot" data-section="section-spending"></div>
+    </div>
+    <div class="fnav-item" data-section="section-edit">
+      <span class="fnav-label">Edit</span>
+      <div class="nav-dot" data-section="section-edit"></div>
+    </div>
+    <div class="fnav-item" data-section="section-future">
+      <span class="fnav-label">Future</span>
+      <div class="nav-dot nav-dot-future" data-section="section-future"></div>
+    </div>
+    <div class="fnav-item" data-section="section-review">
+      <span class="fnav-label">Review</span>
+      <div class="nav-dot" data-section="section-review"></div>
     </div>
   </div>
 
